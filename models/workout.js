@@ -11,12 +11,25 @@ Workout.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    workout_id: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    weight: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    reps: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    duration: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    notes: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     date_created: {
       type: DataTypes.DATE,
@@ -36,8 +49,8 @@ Workout.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'workout',
   }
 );
 
-module.exports = Project;
+module.exports = Workout;
