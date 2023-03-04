@@ -1,15 +1,16 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#workout-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
+  const workout_id = document.querySelector('#workout-id').value.trim();
+  const upperWorkoutType = document.querySelector('#upper-workout-type').value;
+  const lowerWorkoutType = document.querySelector('#lower-workout-type').value;
   const description = document.querySelector('#workout-desc').value.trim();
   
 
-  if (name && needed_funding && description) {
+  if (workout_id && upperWorkoutType && lowerWorkoutType && description) {
     const response = await fetch(`/api/workouts`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ workout_id, upperWorkoutType, lowerWorkoutType, description }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -40,9 +41,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.new-workout-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
+  .querySelector('.workout-list')
   .addEventListener('click', delButtonHandler);

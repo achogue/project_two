@@ -8,19 +8,17 @@
   <div class="col-md-6">
     <h3>Create a New Workout</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-workout-form">
       <div class="form-group">
-        <label for="project-name">Routine name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="workout-id">Routine name:</label>
+        <input class="form-input" type="text" id="workout-id" name="workout-id" />
       </div>
       <div class="form-group">
-        <label for="project-funding">Upper Body:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <select name="" id="">
-        <option value="pushups"></option>
-        <option value="overhead press"></option>
-        <option value="pullups"></option>
+        <label for="workout-funding">Upper Body:</label>
+              <select name="upper-workout-type" id="upper-workout-type">
+        <option value="pushups">pushups</option>
+        <option value="overhead press">overhead press</option>
+        <option value="pullups">pullups</option>
         <option value="vertical rows"></option>
         <option value="weighted curls"></option>
         <option value="kettlebell swings"></option>
@@ -30,15 +28,15 @@
         <option value="chest press"></option>
 
       </select>
+      </div>
+
       <div class="form-group">
          <div class="form-group">
-        <label for="project-funding">Lower Body:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <select name="" id="">
-        <option value="lateral lunges"></option>
-        <option value="goblet squats"></option>
-        <option value="forward lunges"></option>
+        <label for="workout-funding">Lower Body:</label>
+        <select name="lower-workout-type" id="lower-workout-type">
+        <option value="lateral lunges">lateral lunges</option>
+        <option value="goblet squats">goblet squats</option>
+        <option value="forward lunges">forward lunges</option>
         <option value="dumbell squats"></option>
         <option value="seated leg press"></option>
         <option value="calf raises"></option>
@@ -48,15 +46,15 @@
         <option value="mountain climbers"></option>
 
       </select>
-      <div class="form-group">
-         <div class="form-group">
-        <label for="project-funding">Blended Routine:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
       </div>
-      <select name="" id="">
-        <option value="pushups"></option>
-        <option value="overhead press"></option>
-        <option value="pullups"></option>
+     
+      {{!-- <div class="form-group">
+         <div class="form-group">
+        <label for="workout-funding">Blended Routine:</label>
+       <select name="" id="">
+        <option value="pushups">pushups</option>
+        <option value="overhead press">overhead press</option>
+        <option value="pullups">pullups</option>
         <option value="vertical rows"></option>
         <option value="weighted curls"></option>
         <option value="kettlebell swings"></option>
@@ -76,9 +74,11 @@
         <option value="mountain climbers"></option>
 
       </select>
+      </div> --}}
+      
       <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="workout-desc">description:</label>
+        <textarea class="form-input" id="workout-desc" name="workout-desc"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -87,13 +87,13 @@
   </div>
 
   {{#if workouts.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 workout-list">
     <h3>Workout Log</h3>
 
     {{#each workouts as |workout|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/workout/{{workout.id}}">{{workout.name}}</a></h4>
+        <h4><a href="/workout/{{workout.id}}">{{workout.workout_id}} </a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{workout.id}}">DELETE</button>

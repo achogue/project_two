@@ -13,21 +13,17 @@ Workout.init(
     },
     workout_id: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    weight: {
-      type: DataTypes.INTEGER,
       allowNull: true,
     },
-    reps: {
-      type: DataTypes.INTEGER,
+    upperWorkoutType: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
-    duration: {
-      type: DataTypes.INTEGER,
+    lowerWorkoutType: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
-    notes: {
+    description: {
       type: DataTypes.STRING,
       allowNull: true,
     },
