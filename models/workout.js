@@ -23,6 +23,10 @@ Workout.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    blendedWorkoutType: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: true,

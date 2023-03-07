@@ -4,13 +4,14 @@ const newFormHandler = async (event) => {
   const workout_id = document.querySelector('#workout-id').value.trim();
   const upperWorkoutType = document.querySelector('#upper-workout-type').value;
   const lowerWorkoutType = document.querySelector('#lower-workout-type').value;
+  const blendedWorkoutType = document.querySelector('#blended-workout-type').value;
   const description = document.querySelector('#workout-desc').value.trim();
   
 
-  if (workout_id && upperWorkoutType && lowerWorkoutType && description) {
+  if (workout_id && upperWorkoutType && lowerWorkoutType && blendedWorkoutType && description) {
     const response = await fetch(`/api/workouts`, {
       method: 'POST',
-      body: JSON.stringify({ workout_id, upperWorkoutType, lowerWorkoutType, description }),
+      body: JSON.stringify({ workout_id, upperWorkoutType, lowerWorkoutType, blendedWorkoutType, description }),
       headers: {
         'Content-Type': 'application/json',
       },
