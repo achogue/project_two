@@ -4,6 +4,8 @@ This app is desinged to help you keep track of / or build workouts you have or a
 
 Log in / sign up on the home page using your email and password. This will take you to the home page where you can choose from a drop down menu what kind of workout you wish to keep track of. You'll have the option to then enter in other info such as reps, weight, duration of workout, etc.
 
+https://calm-mesa-05357.herokuapp.com/
+
 
 <img width="1741" alt="workout tracker homepage" src="https://user-images.githubusercontent.com/116693659/223234514-2eed4392-f00a-45c0-829c-609970bf86ac.png">
 
